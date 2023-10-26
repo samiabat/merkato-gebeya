@@ -1,0 +1,123 @@
+.register {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 700px) {
+    .register {
+        display: flex;
+        flex-direction: row;
+        max-height: 700px;
+        margin-bottom: 150px;
+    }
+}
+
+.side {
+    width: 100%;
+    text-align: center;
+}
+
+@media (min-width: 700px) {
+    .side {
+        width: 50%;
+        margin-right: 2%;
+    }
+}
+
+.register-form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.register-content {
+    width: 80%;
+}
+
+@media (min-width: 700px) {
+    .register-form {
+        width: 40%;
+    }
+    .register-content {
+        width: 100%;
+    }
+}
+
+input {
+    border: none;
+    background-color: white;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+@media (main-width:700px) {
+    input {
+        width: 100%;
+        border-radius: 5px;
+        padding: 5px;
+    }
+}
+
+.register-button {
+    border: none;
+    outline: none;
+    font-size: 16px;
+    margin: 15px 0px;
+    background-color: #DB4444;
+    color: white;
+    padding: 15px 40px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.register-google {
+    border: none;
+    outline: none;
+    font-size: 16px;
+    margin: 15px 0px;
+    background-color: white;
+    color: black;
+    border: 1px solid grey;
+    padding: 15px 40px;
+    width: 100%;
+    cursor: pointer;
+}
+
+span {
+    margin-left: 15%;
+    color: red;
+    font-size: large;
+}
+
+h2 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 40px;
+}
+
+img {
+    width: 80%;
+}
+
+@media (min-width: 700px) {
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.have-account {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+}

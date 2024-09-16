@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'product-listing';
+  title = 'Ephara a ecommerce website. you can sell and products on Ephara.';
   constructor(public router: Router) {}
   
 }

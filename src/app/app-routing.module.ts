@@ -8,6 +8,7 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { CartComponent } from './components/cart/cart.component';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'privacy-policy', component: PrivacyPolicyComponent }, // Privacy Policy route
   { path: 'terms-of-service', component: TermsOfServiceComponent }, // Terms of Service route
   { path: 'about-us', component: AboutUsComponent }, // Terms of Service route
+  { path: 'profile', component: ProfileComponent },
   { path: '**', redirectTo: '/' } // Redirect any other paths to the home route
 ];
 

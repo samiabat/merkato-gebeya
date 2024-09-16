@@ -20,6 +20,7 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { SecondNavComponent } from './components/second-nav/second-nav.component';
 import { CartComponent } from './components/cart/cart.component';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { WishlistComponent } from './components/wishlist/wishlist.component';
     SecondNavComponent,
     CartComponent,
     WishlistComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,

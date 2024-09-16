@@ -1,0 +1,90 @@
+<div class="container mx-auto py-12 px-4">
+    <!-- Breadcrumb Navigation -->
+    <nav class="text-sm text-gray-500 mb-6">
+      <a routerLink="/" class="hover:text-gray-800">Home</a> /
+      <span class="text-gray-900">My Account</span>
+    </nav>
+  
+    <!-- Profile Header -->
+    <div class="flex justify-between items-center mb-8">
+      <h1 class="text-2xl font-bold text-gray-900">My Account</h1>
+      <p>Welcome! <span class="text-red-500">John Doe</span></p>
+    </div>
+  
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+      <!-- Sidebar (Manage Account Section) -->
+      <div class="bg-white shadow-lg rounded-lg p-6">
+        <h2 class="text-lg font-semibold text-gray-900 mb-4">Manage My Account</h2>
+        <ul class="space-y-4">
+          <li><a href="#" class="text-red-500">My Profile</a></li>
+          <li><a href="#" class="text-gray-700 hover:text-red-500 ml-4">Address Book</a></li> <!-- Indentation -->
+          <li><a href="#" class="text-gray-700 hover:text-red-500 ml-4">My Payment Options</a></li> <!-- Indentation -->
+        </ul>
+      
+        <h2 class="text-lg font-semibold text-gray-900 mt-8 mb-4">My Orders</h2>
+        <ul class="space-y-4">
+          <li><a href="#" class="text-gray-700 hover:text-red-500 ml-4">My Returns</a></li> <!-- Indentation -->
+          <li><a href="#" class="text-gray-700 hover:text-red-500 ml-4">My Cancellations</a></li> <!-- Indentation -->
+        </ul>
+      
+        <h2 class="text-lg font-semibold text-gray-900 mt-8 mb-4">My Wishlist</h2>
+        <ul class="space-y-4">
+          <li><a href="#" class="text-gray-700 hover:text-red-500 ml-4">View Wishlist</a></li> <!-- Indentation -->
+        </ul>
+      </div>
+  
+      <!-- Edit Profile Form -->
+      <div class="lg:col-span-3 bg-white shadow-lg rounded-lg p-8">
+        <h2 class="text-xl font-bold text-red-500 mb-4">Edit Your Profile</h2>
+  
+        <form>
+          <!-- Name Fields -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label for="firstName" class="block text-sm text-gray-700">First Name</label>
+              <input id="firstName" type="text" value="John" class="mt-1 block w-full border border-gray-300 rounded-lg p-2">
+            </div>
+            <div>
+              <label for="lastName" class="block text-sm text-gray-700">Last Name</label>
+              <input id="lastName" type="text" value="Doe" class="mt-1 block w-full border border-gray-300 rounded-lg p-2">
+            </div>
+          </div>
+  
+          <!-- Email and Address Fields -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
+            <div>
+              <label for="email" class="block text-sm text-gray-700">Email</label>
+              <input id="email" type="email" value="john.doe@gmail.com" class="mt-1 block w-full border border-gray-300 rounded-lg p-2">
+            </div>
+            <div>
+              <label for="address" class="block text-sm text-gray-700">Address</label>
+              <input id="address" type="text" value="123 Main St, Addis Ababa, Ethiopia" class="mt-1 block w-full border border-gray-300 rounded-lg p-2">
+            </div>
+          </div>
+  
+          <!-- Password Fields -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-6">
+            <div>
+              <label for="currentPassword" class="block text-sm text-gray-700">Current Password</label>
+              <input id="currentPassword" type="password" placeholder="Enter current password" class="mt-1 block w-full border border-gray-300 rounded-lg p-2">
+            </div>
+            <div>
+              <label for="newPassword" class="block text-sm text-gray-700">New Password</label>
+              <input id="newPassword" type="password" placeholder="Enter new password" class="mt-1 block w-full border border-gray-300 rounded-lg p-2">
+            </div>
+            <div>
+              <label for="confirmPassword" class="block text-sm text-gray-700">Confirm New Password</label>
+              <input id="confirmPassword" type="password" placeholder="Confirm new password" class="mt-1 block w-full border border-gray-300 rounded-lg p-2">
+            </div>
+          </div>
+  
+          <!-- Buttons -->
+          <div class="flex justify-between items-center mt-8">
+            <button type="button" class="text-gray-700 hover:text-red-500">Cancel</button>
+            <button type="submit" class="bg-red-500 text-white px-6 py-3 rounded-lg hover:bg-red-600">Save Changes</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  

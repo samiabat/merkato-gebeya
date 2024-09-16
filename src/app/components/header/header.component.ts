@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
    // These values should be dynamically updated based on your application's state
-   cartCount: number = 2; // Example count for items in the cart
-   wishlistCount: number = 4; // Example count for items in the wishlist
+   cartCount: number = 2; // Example cart count
+  wishlistCount: number = 4; // Example wishlist count
+  profileNotifications: number = 1; // Example profile notification countcls
 }

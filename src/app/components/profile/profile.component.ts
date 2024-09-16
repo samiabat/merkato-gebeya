@@ -18,4 +18,19 @@ export class ProfileComponent {
      console.log('Profile updated:', this.firstName, this.lastName, this.email, this.address);
    }
 
+   addOrders() {
+    // Logic to add new orders
+    console.log('Add Orders button clicked.');
+  }
+
+  manageAds() {
+    // Logic to manage ads
+    console.log('Manage Ads clicked.');
+  }
+
+  createNewAd() {
+    // Logic to create a new ad
+    console.log('Create New Ad clicked.');
+  }
+
 }

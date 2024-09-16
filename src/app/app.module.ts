@@ -21,6 +21,8 @@ import { SecondNavComponent } from './components/second-nav/second-nav.component
 import { CartComponent } from './components/cart/cart.component';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { CreateAdComponent } from './components/create-ad/create-ad.component';
+import { ViewMyAdsComponent } from './components/view-my-ads/view-my-ads.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +45,8 @@ import { ProfileComponent } from './components/profile/profile.component';
     CartComponent,
     WishlistComponent,
     ProfileComponent,
+    CreateAdComponent,
+    ViewMyAdsComponent,
   ],
   imports: [
     BrowserModule,

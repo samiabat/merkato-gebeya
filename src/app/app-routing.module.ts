@@ -9,6 +9,8 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { CartComponent } from './components/cart/cart.component';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { CreateAdComponent } from './components/create-ad/create-ad.component';
+import { ViewMyAdsComponent } from './components/view-my-ads/view-my-ads.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -21,6 +23,8 @@ const routes: Routes = [
   { path: 'terms-of-service', component: TermsOfServiceComponent }, // Terms of Service route
   { path: 'about-us', component: AboutUsComponent }, // Terms of Service route
   { path: 'profile', component: ProfileComponent },
+  { path: 'my-ads/create', component: CreateAdComponent }, 
+  { path: 'my-ads/view', component: ViewMyAdsComponent }, // Route for View My Ads
   { path: '**', redirectTo: '/' } // Redirect any other paths to the home route
 ];
 

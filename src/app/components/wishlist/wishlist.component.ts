@@ -17,7 +17,7 @@ export class WishlistComponent {
 
     // Example recommended products (replace with your actual data)
     recommendedProducts = [
-      { id: 5, name: 'Laptop Backpack', price: 99, image: 'https://mudita.com.np/media/catalog/product/cache/5f4a658faeee583187031a67361d4d52/d/a/dahua-27-inch-qhd-gaming-monitor-price-in-nepal.webp"' },
+      { id: 5, name: 'Laptop Backpack', price: 99, image: 'https://mudita.com.np/media/catalog/product/cache/5f4a658faeee583187031a67361d4d52/d/a/dahua-27-inch-qhd-gaming-monitor-price-in-nepal.webp' },
       { id: 6, name: 'LCD Gaming Monitor', price: 650, image: 'https://mudita.com.np/media/catalog/product/cache/5f4a658faeee583187031a67361d4d52/d/a/dahua-27-inch-qhd-gaming-monitor-price-in-nepal.webp' },
       { id: 7, name: 'Gaming Mouse', price: 50, image: 'https://mudita.com.np/media/catalog/product/cache/5f4a658faeee583187031a67361d4d52/d/a/dahua-27-inch-qhd-gaming-monitor-price-in-nepal.webp' },
       { id: 8, name: 'Mechanical Keyboard', price: 120, image: 'https://mudita.com.np/media/catalog/product/cache/5f4a658faeee583187031a67361d4d52/d/a/dahua-27-inch-qhd-gaming-monitor-price-in-nepal.webp' }

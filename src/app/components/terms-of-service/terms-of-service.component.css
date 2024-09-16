@@ -1,0 +1,12 @@
+.container {
+    max-width: 800px;
+  }
+  
+  h1, h2 {
+    color: #1F2937; /* Tailwind Gray-800 */
+  }
+  
+  p {
+    color: #4B5563; /* Tailwind Gray-600 */
+  }
+  

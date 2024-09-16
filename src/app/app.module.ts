@@ -11,6 +11,15 @@ import { BestSellingProductsComponent } from './components/best-selling-products
 import { ExploreProductsComponent } from './components/explore-products/explore-products.component';
 import { NewArrivalsComponent } from './components/new-arrivals/new-arrivals.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ContactUsComponent } from './components/contact-us/contact-us.component';
+import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
+import { TermsOfServiceComponent } from './components/terms-of-service/terms-of-service.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
+import { SignInComponent } from './components/sign-in/sign-in.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { SecondNavComponent } from './components/second-nav/second-nav.component';
+import { CartComponent } from './components/cart/cart.component';
+import { WishlistComponent } from './components/wishlist/wishlist.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +31,16 @@ import { FooterComponent } from './components/footer/footer.component';
     BestSellingProductsComponent,
     ExploreProductsComponent,
     FooterComponent,
-    NewArrivalsComponent
+    NewArrivalsComponent,
+    ContactUsComponent,
+    PrivacyPolicyComponent,
+    TermsOfServiceComponent,
+    AboutUsComponent,
+    SignInComponent,
+    SignUpComponent,
+    SecondNavComponent,
+    CartComponent,
+    WishlistComponent,
   ],
   imports: [
     BrowserModule,

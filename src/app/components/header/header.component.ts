@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-
+   // These values should be dynamically updated based on your application's state
+   cartCount: number = 2; // Example count for items in the cart
+   wishlistCount: number = 4; // Example count for items in the wishlist
 }

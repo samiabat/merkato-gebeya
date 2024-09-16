@@ -2,15 +2,18 @@
     <div class="container mx-auto flex items-center justify-between py-4">
         <!-- Logo -->
         <div class="text-2xl font-bold text-gray-800">
-            <a href="#" class="hover:text-red-500">Elala</a>
+            <a href="#" class="hover:text-red-500">
+                <img src="../../../assets/images/logo.png" alt="Elala Logo" class="h-20">
+            </a>
         </div>
         
         <!-- Navigation Links -->
         <nav class="hidden md:flex space-x-8">
             <a href="#" class="text-gray-700 hover:text-red-500">Home</a>
-            <a href="#" class="text-gray-700 hover:text-red-500">Contact</a>
-            <a href="#" class="text-gray-700 hover:text-red-500">About</a>
-            <a href="#" class="text-gray-700 hover:text-red-500">Sign Up</a>
+            <a routerLink="/contact-us" class="text-gray-700 hover:text-red-500">Contact</a>
+            <a routerLink="/about-us" class="text-gray-700 hover:text-red-500">About</a>
+            <a routerLink="/sign-up" class="text-gray-700 hover:text-red-500">Sign Up</a>
+            <!-- <a href="#" class="text-gray-700 hover:text-red-500">Sign Up</a> -->
         </nav>
         
         <!-- Search Bar -->
@@ -27,28 +30,30 @@
         
         <!-- Icons -->
         <div class="flex items-center space-x-4">
-            <!-- Wishlist Icon -->
-            <a href="#" class="text-gray-700 hover:text-red-500">
-                <i class="fas fa-heart"></i>
-            </a>
-            <!-- Cart Icon -->
-            <a href="#" class="text-gray-700 hover:text-red-500">
-                <i class="fas fa-shopping-cart"></i>
-            </a>
+             <!-- Wishlist Icon with Counter -->
+            <div class="relative">
+                <a routerLink="/wishlist" class="text-gray-700 hover:text-red-500">
+                <i class="fas fa-heart text-2xl"></i>
+                </a>
+                <!-- Counter Badge -->
+                <span *ngIf="wishlistCount > 0" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-semibold px-2 py-1 rounded-full badge">
+                {{ wishlistCount }}
+                </span>
+            </div>
+
+            <!-- Cart Icon with Counter -->
+            <div class="relative">
+                <a routerLink="/cart" class="text-gray-700 hover:text-red-500">
+                <i class="fas fa-shopping-cart text-2xl"></i>
+                </a>
+                <!-- Counter Badge -->
+                <span *ngIf="cartCount > 0" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-semibold px-2 py-1 rounded-full badge">
+                {{ cartCount }}
+                </span>
+            </div>
         </div>
+          
     </div>
     
-    <!-- Secondary Navigation (Categories) -->
-    <div class="bg-gray-100 py-2">
-        <div class="container mx-auto flex items-center space-x-4">
-            <a href="#" class="text-gray-700 hover:text-red-500">Woman's Fashion</a>
-            <a href="#" class="text-gray-700 hover:text-red-500">Men's Fashion</a>
-            <a href="#" class="text-gray-700 hover:text-red-500">Electronics</a>
-            <a href="#" class="text-gray-700 hover:text-red-500">Home & Lifestyle</a>
-            <a href="#" class="text-gray-700 hover:text-red-500">Sports & Outdoor</a>
-            <a href="#" class="text-gray-700 hover:text-red-500">Baby's & Toys</a>
-            <a href="#" class="text-gray-700 hover:text-red-500">Groceries & Pets</a>
-            <a href="#" class="text-gray-700 hover:text-red-500">Health & Beauty</a>
-        </div>
-    </div>
+    
 </header>

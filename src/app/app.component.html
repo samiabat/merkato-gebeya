@@ -1,15 +1,17 @@
 <app-header></app-header>
-<app-main-content></app-main-content>
-<app-flash-sales></app-flash-sales>
 
+<!-- Show Main Content only on non-contact-us, non-privacy-policy, and non-terms-of-service pages -->
+<div *ngIf="router.url === '/' || router.url === 'home'">
+    <app-second-nav></app-second-nav>
+    <app-main-content></app-main-content>
+    <app-flash-sales></app-flash-sales>
+    <app-browse-category></app-browse-category>
+    <app-best-selling-products></app-best-selling-products>
+    <app-explore-products></app-explore-products>
+    <app-new-arrivals></app-new-arrivals>
+</div>
 
-
-<app-browse-category></app-browse-category>
-<app-best-selling-products></app-best-selling-products>
-<app-explore-products></app-explore-products>
-<app-new-arrivals></app-new-arrivals>
-
-
-
+<!-- Router Outlet will load the Contact Us, Privacy Policy, or Terms of Service components -->
+<router-outlet></router-outlet>
 
 <app-footer></app-footer>

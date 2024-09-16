@@ -3,24 +3,26 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { SignupComponent } from './signup/signup.component';
-import { ContactComponent } from './contact/contact.component';
-import { AboutComponent } from './about/about.component';
-import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
-import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './components/header/header.component';
+import { MainContentComponent } from './components/main-content/main-content.component';
+import { FlashSalesComponent } from './components/flash-sales/flash-sales.component';
+import { BrowseCategoryComponent } from './components/browse-category/browse-category.component';
+import { BestSellingProductsComponent } from './components/best-selling-products/best-selling-products.component';
+import { ExploreProductsComponent } from './components/explore-products/explore-products.component';
+import { NewArrivalsComponent } from './components/new-arrivals/new-arrivals.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
-    SignupComponent,
-    ContactComponent,
-    AboutComponent,
-    HomeComponent,
-    LoginComponent,
-    FooterComponent
+    HeaderComponent,
+    MainContentComponent,
+    FlashSalesComponent,
+    BrowseCategoryComponent,
+    BestSellingProductsComponent,
+    ExploreProductsComponent,
+    FooterComponent,
+    NewArrivalsComponent
   ],
   imports: [
     BrowserModule,

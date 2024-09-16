@@ -1,7 +1,7 @@
 <app-header></app-header>
 
 <!-- Show Main Content only on non-contact-us, non-privacy-policy, and non-terms-of-service pages -->
-<div *ngIf="router.url === '/' || router.url === 'home'">
+<div *ngIf="router.url === '/' || router.url === '/home'">
     <app-second-nav></app-second-nav>
     <app-main-content></app-main-content>
     <app-flash-sales></app-flash-sales>

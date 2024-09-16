@@ -11,9 +11,11 @@ import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { CreateAdComponent } from './components/create-ad/create-ad.component';
 import { ViewMyAdsComponent } from './components/view-my-ads/view-my-ads.component';
+import { AppComponent } from './app.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', component: AppComponent }, 
   { path: 'sign-in', component: SignInComponent },
   { path: 'cart', component: CartComponent },
   { path: 'wishlist', component: WishlistComponent },

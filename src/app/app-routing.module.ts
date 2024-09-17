@@ -12,22 +12,23 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { CreateAdComponent } from './components/create-ad/create-ad.component';
 import { ViewMyAdsComponent } from './components/view-my-ads/view-my-ads.component';
 import { AppComponent } from './app.component';
+import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: AppComponent }, 
+  { path: 'home', component: HomeComponent },  // Use the new HomeComponent
   { path: 'sign-in', component: SignInComponent },
   { path: 'cart', component: CartComponent },
   { path: 'wishlist', component: WishlistComponent },
   { path: 'sign-up', component: SignUpComponent },
   { path: 'contact-us', component: ContactUsComponent },
-  { path: 'privacy-policy', component: PrivacyPolicyComponent }, // Privacy Policy route
-  { path: 'terms-of-service', component: TermsOfServiceComponent }, // Terms of Service route
-  { path: 'about-us', component: AboutUsComponent }, // Terms of Service route
+  { path: 'privacy-policy', component: PrivacyPolicyComponent },
+  { path: 'terms-of-service', component: TermsOfServiceComponent },
+  { path: 'about-us', component: AboutUsComponent },
   { path: 'profile', component: ProfileComponent },
-  { path: 'my-ads/create', component: CreateAdComponent }, 
-  { path: 'my-ads/view', component: ViewMyAdsComponent }, // Route for View My Ads
-  { path: '**', redirectTo: '/' } // Redirect any other paths to the home route
+  { path: 'my-ads/create', component: CreateAdComponent },
+  { path: 'my-ads/view', component: ViewMyAdsComponent },
+  { path: '**', redirectTo: '/home' }  // Ensure wildcard redirects to /home
 ];
 
 @NgModule({

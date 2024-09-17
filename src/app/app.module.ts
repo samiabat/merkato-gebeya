@@ -23,6 +23,7 @@ import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { CreateAdComponent } from './components/create-ad/create-ad.component';
 import { ViewMyAdsComponent } from './components/view-my-ads/view-my-ads.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { ViewMyAdsComponent } from './components/view-my-ads/view-my-ads.compone
     ProfileComponent,
     CreateAdComponent,
     ViewMyAdsComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

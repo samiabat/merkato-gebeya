@@ -1,15 +1,6 @@
 <app-header></app-header>
 
-<!-- Show Main Content only on non-contact-us, non-privacy-policy, and non-terms-of-service pages -->
-<div *ngIf="router.url === '/' || router.url === '/home'">
-    <app-second-nav></app-second-nav>
-    <app-main-content></app-main-content>
-    <app-flash-sales></app-flash-sales>
-    <app-browse-category></app-browse-category>
-    <app-best-selling-products></app-best-selling-products>
-    <app-explore-products></app-explore-products>
-    <app-new-arrivals></app-new-arrivals>
-</div>
-
+<!-- Main Content will be shown via the router -->
+<router-outlet></router-outlet>
 
 <app-footer></app-footer>

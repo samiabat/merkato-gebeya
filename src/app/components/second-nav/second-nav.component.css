@@ -1,0 +1,5 @@
+#mobile-categories {
+    max-height: 300px; /* Adjust as needed */
+    overflow-y: scroll;
+  }
+  

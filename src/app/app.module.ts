@@ -24,6 +24,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { CreateAdComponent } from './components/create-ad/create-ad.component';
 import { ViewMyAdsComponent } from './components/view-my-ads/view-my-ads.component';
 import { HomeComponent } from './components/home/home.component';
+import { ProductFilterComponent } from './components/product-filter/product-filter.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { HomeComponent } from './components/home/home.component';
     CreateAdComponent,
     ViewMyAdsComponent,
     HomeComponent,
+    ProductFilterComponent,
   ],
   imports: [
     BrowserModule,

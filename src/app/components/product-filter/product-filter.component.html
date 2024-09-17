@@ -1,0 +1,18 @@
+<!-- Category Dropdown -->
+<div class="mb-4">
+    <label for="category" class="block text-gray-700 font-semibold">Category</label>
+    <select id="category" (change)="onCategoryChange($event)" class="border border-gray-300 p-2 rounded">
+      <option value="" disabled selected>Select a Category</option>
+      <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+    </select>
+  </div>
+  
+  <!-- Subcategory Dropdown -->
+  <div class="mb-4" *ngIf="selectedCategory">
+    <label for="subcategory" class="block text-gray-700 font-semibold">Subcategory</label>
+    <select id="subcategory" (change)="onSubcategoryChange($event)" class="border border-gray-300 p-2 rounded">
+      <option value="" disabled selected>Select a Subcategory</option>
+      <option *ngFor="let subcategory of subcategories[selectedCategory]" [value]="subcategory">{{ subcategory }}</option>
+    </select>
+  </div>
+  

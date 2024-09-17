@@ -37,6 +37,19 @@
   
       <!-- Icons (Visible on All Screens) -->
       <div class="flex items-center space-x-4">
+
+        <!-- Search Bar (Visible on Medium and Larger Screens) -->
+        <div class="relative hidden md:block">
+            <input 
+            type="text" 
+            placeholder="Search for products" 
+            class="w-64 px-4 py-2 border border-gray-300 rounded-full focus:outline-none"
+            >
+            <button class="absolute top-0 right-0 mt-2 mr-3 text-gray-600 hover:text-red-500">
+            <i class="fas fa-search"></i>
+            </button>
+        </div>
+
         <!-- Wishlist Icon with Counter -->
         <div class="relative">
           <a routerLink="/wishlist" class="text-gray-700 hover:text-red-500">
@@ -79,16 +92,6 @@
       </div>
     </nav>
   
-    <!-- Search Bar (Visible on Medium and Larger Screens) -->
-    <div class="relative hidden md:block">
-      <input 
-        type="text" 
-        placeholder="Search for products" 
-        class="w-64 px-4 py-2 border border-gray-300 rounded-full focus:outline-none"
-      >
-      <button class="absolute top-0 right-0 mt-2 mr-3 text-gray-600 hover:text-red-500">
-        <i class="fas fa-search"></i>
-      </button>
-    </div>
+    
   </header>
   

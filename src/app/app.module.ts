@@ -25,6 +25,8 @@ import { CreateAdComponent } from './components/create-ad/create-ad.component';
 import { ViewMyAdsComponent } from './components/view-my-ads/view-my-ads.component';
 import { HomeComponent } from './components/home/home.component';
 import { ProductFilterComponent } from './components/product-filter/product-filter.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -54,7 +56,10 @@ import { ProductFilterComponent } from './components/product-filter/product-filt
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

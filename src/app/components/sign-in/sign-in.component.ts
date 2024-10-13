@@ -27,7 +27,7 @@ export class SignInComponent {
   onSubmit(): void {
     if (this.loginForm.valid) {
       const { email_or_phone, password } = this.loginForm.value;
-      this.http.post<any>('https://ephara-backend.onrender.com/token', {
+      this.http.post<any>('https://ephara-backend.onrender.com/api/auth/token', {
         email_or_phone,
         password
       }).subscribe(

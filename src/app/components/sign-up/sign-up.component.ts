@@ -31,7 +31,7 @@ export class SignUpComponent {
   onSubmit(): void {
     if (this.registerForm.valid) {
       const { full_name, email, phone_number, password } = this.registerForm.value;
-      this.http.post<any>('https://ephara-backend.onrender.com/register', {
+      this.http.post<any>('https://ephara-backend.onrender.com/api/user/register', {
         full_name,
         email,
         phone_number,

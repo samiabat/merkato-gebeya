@@ -1,22 +1,56 @@
-<section class="container mx-auto mt-8 p-4">
-    <div class="flex justify-between items-center">
-      <h2 class="text-xl font-bold">Explore Our Products</h2>
-      <button class="bg-red-500 text-white px-4 py-2 rounded-lg">View All</button>
-    </div>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
-      <div class="border rounded-lg p-4">
-        <img src="https://via.placeholder.com/150" alt="Product Image" class="w-full h-auto">
-        <h3 class="mt-2 text-lg font-semibold">Product Name</h3>
-        <p class="text-red-500 font-bold mt-1">$99.99</p>
-        <button class="bg-red-500 text-white px-4 py-2 rounded-lg mt-2 w-full">Buy Now</button>
+<section class="py-10 bg-gray-50">
+  <div class="container mx-auto px-4 lg:px-6">
+
+    <!-- Section Header -->
+    <div class="flex items-center justify-between mb-8">
+      <div class="flex items-center gap-3">
+        <span class="w-1 h-8 bg-red-500 rounded-full"></span>
+        <div>
+          <p class="text-red-500 text-sm font-semibold uppercase tracking-wide">Our Products</p>
+          <h2 class="text-2xl font-bold text-gray-900">Explore Our Products</h2>
+        </div>
       </div>
-      <div class="border rounded-lg p-4">
-        <img src="https://via.placeholder.com/150" alt="Product Image" class="w-full h-auto">
-        <h3 class="mt-2 text-lg font-semibold">Product Name</h3>
-        <p class="text-red-500 font-bold mt-1">$99.99</p>
-        <button class="bg-red-500 text-white px-4 py-2 rounded-lg mt-2 w-full">Buy Now</button>
-      </div>
-      <!-- Repeat for other products -->
+      <a href="#" class="btn-outline text-sm rounded-full hidden sm:flex">View All</a>
     </div>
-  </section>
-  
+
+    <!-- Products Grid -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+      <div *ngFor="let product of exploreProducts" class="product-card">
+        <div class="relative overflow-hidden bg-white">
+          <img [src]="product.image" [alt]="product.name" class="w-full h-44 object-cover group-hover:scale-105 transition-transform duration-300">
+          <span *ngIf="product.isNew" class="badge-new">New</span>
+          <span *ngIf="product.discount" class="badge-sale">-{{ product.discount }}%</span>
+          <div class="absolute top-3 right-3 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+            <button class="w-8 h-8 bg-white rounded-full shadow-md flex items-center justify-center hover:bg-red-500 hover:text-white transition-colors">
+              <i class="fas fa-heart text-xs"></i>
+            </button>
+            <button class="w-8 h-8 bg-white rounded-full shadow-md flex items-center justify-center hover:bg-gray-900 hover:text-white transition-colors">
+              <i class="fas fa-eye text-xs"></i>
+            </button>
+          </div>
+        </div>
+        <div class="p-4">
+          <h3 class="text-sm font-semibold text-gray-800 mb-1 line-clamp-1">{{ product.name }}</h3>
+          <div class="flex items-center gap-2 mb-2">
+            <span class="text-red-500 font-bold">${{ product.price }}</span>
+            <span *ngIf="product.originalPrice" class="text-gray-400 text-sm line-through">${{ product.originalPrice }}</span>
+          </div>
+          <div class="flex items-center gap-1 mb-3">
+            <div class="flex text-yellow-400 text-xs">
+              <i *ngFor="let s of getStars(product.rating)" [class]="s"></i>
+            </div>
+            <span class="text-xs text-gray-500">({{ product.reviews }})</span>
+          </div>
+          <button class="w-full bg-gray-900 hover:bg-red-500 text-white text-sm py-2 rounded-lg font-medium transition-colors flex items-center justify-center gap-1.5">
+            <i class="fas fa-shopping-cart text-xs"></i> Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- View All Button -->
+    <div class="flex justify-center mt-8">
+      <a href="#" class="btn-primary rounded-full px-10 sm:hidden">View All Products</a>
+    </div>
+  </div>
+</section>

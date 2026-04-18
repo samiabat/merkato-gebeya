@@ -1,4 +1,5 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -6,16 +7,23 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-   // These values should be dynamically updated based on your application's state
-   cartCount: number = 2; // Example cart count
-    wishlistCount: number = 4; // Example wishlist count
-    profileNotifications: number = 1; // Example profile notification countcls
+  cartCount: number = 2;
+  wishlistCount: number = 4;
+  profileNotifications: number = 1;
+  mobileMenuOpen = false;
+  searchQuery = '';
 
-     // Use ViewChild to get a reference to the mobile menu element
-  @ViewChild('mobileMenu') mobileMenu!: ElementRef;
+  constructor(private router: Router) {}
 
   toggleMobileMenu() {
-    const menu = this.mobileMenu.nativeElement;
-    menu.classList.toggle('hidden');
+    this.mobileMenuOpen = !this.mobileMenuOpen;
+  }
+
+  onSearch() {
+    if (this.searchQuery.trim()) {
+      // Navigate to explore products or search results
+      this.router.navigate(['/home'], { queryParams: { q: this.searchQuery.trim() } });
+    }
   }
 }
+

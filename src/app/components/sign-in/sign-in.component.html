@@ -1,40 +1,103 @@
-<!-- Updated HTML to work with TypeScript -->
-<div class="container mx-auto py-12 px-4">
-  <div class="flex flex-col md:flex-row items-center justify-between">
-    <!-- Left Side: Image -->
-    <div class="md:w-1/2 mb-8 md:mb-0">
-      <img src="../../../assets/images/Side Image.png" alt="Shopping Cart" class="w-full h-auto">
+<div class="min-h-screen bg-gray-50 flex">
+
+  <!-- Left: Image Panel -->
+  <div class="hidden lg:flex lg:w-1/2 relative bg-gray-900 overflow-hidden">
+    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=900&q=80" alt="Shopping" class="w-full h-full object-cover opacity-60">
+    <div class="absolute inset-0 bg-gradient-to-br from-red-900/60 to-gray-900/80 flex flex-col justify-center px-16">
+      <a routerLink="/home" class="absolute top-8 left-8">
+        <img src="../../../assets/images/logo.png" alt="Merkato Gebeya" class="h-12 brightness-0 invert">
+      </a>
+      <h2 class="text-4xl font-bold text-white mb-4 leading-tight">
+        Welcome Back to<br>Merkato Gebeya
+      </h2>
+      <p class="text-gray-300 text-lg">Your favourite products are waiting for you. Sign in to continue your shopping journey.</p>
+      <div class="flex items-center gap-4 mt-10">
+        <div class="flex -space-x-2">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=40&h=40&fit=crop" class="w-9 h-9 rounded-full border-2 border-white object-cover" alt="">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop" class="w-9 h-9 rounded-full border-2 border-white object-cover" alt="">
+          <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=40&h=40&fit=crop" class="w-9 h-9 rounded-full border-2 border-white object-cover" alt="">
+        </div>
+        <span class="text-gray-300 text-sm">Join <strong class="text-white">3M+</strong> happy shoppers</span>
+      </div>
     </div>
+  </div>
 
-    <!-- Right Side: Form -->
-    <div class="md:w-1/2 max-w-md">
-      <h2 class="text-3xl font-bold text-gray-900 mb-4">Log in to Ephara</h2>
-      <p class="text-gray-600 mb-8">Enter your details below</p>
+  <!-- Right: Form Panel -->
+  <div class="flex-1 flex items-center justify-center px-6 py-12">
+    <div class="w-full max-w-md">
+      <!-- Mobile Logo -->
+      <a routerLink="/home" class="flex items-center gap-2 mb-8 lg:hidden">
+        <img src="../../../assets/images/logo.png" alt="Merkato Gebeya" class="h-10">
+      </a>
 
-      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-        <!-- Email or Phone Input -->
-        <div class="mb-4">
-          <input type="text" formControlName="email_or_phone" placeholder="Email or Phone Number" class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+      <div class="mb-8">
+        <h1 class="text-3xl font-bold text-gray-900 mb-2">Sign In</h1>
+        <p class="text-gray-500">Enter your credentials to access your account.</p>
+      </div>
+
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="space-y-5">
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1.5">Email or Phone Number</label>
+          <div class="relative">
+            <i class="fas fa-envelope absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
+            <input type="text" formControlName="email_or_phone" placeholder="Enter your email or phone"
+              class="w-full pl-11 pr-4 py-3 border-2 border-gray-200 rounded-xl text-sm focus:outline-none focus:border-red-400 transition-colors">
+          </div>
         </div>
 
-        <!-- Password Input -->
-        <div class="mb-4">
-          <input type="password" formControlName="password" placeholder="Password" class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+        <div>
+          <div class="flex items-center justify-between mb-1.5">
+            <label class="text-sm font-medium text-gray-700">Password</label>
+            <a href="#" class="text-sm text-red-500 hover:text-red-600 font-medium">Forgot password?</a>
+          </div>
+          <div class="relative">
+            <i class="fas fa-lock absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
+            <input [type]="showPassword ? 'text' : 'password'" formControlName="password" placeholder="Enter your password"
+              class="w-full pl-11 pr-12 py-3 border-2 border-gray-200 rounded-xl text-sm focus:outline-none focus:border-red-400 transition-colors">
+            <button type="button" (click)="showPassword = !showPassword" class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600">
+              <i [class]="showPassword ? 'fas fa-eye-slash text-sm' : 'fas fa-eye text-sm'"></i>
+            </button>
+          </div>
         </div>
 
-        <!-- Login Button -->
-        <button type="submit" class="bg-red-500 text-white w-full py-3 rounded-lg hover:bg-red-600">Log In</button>
+        <div class="flex items-center gap-2">
+          <input type="checkbox" id="remember" class="w-4 h-4 accent-red-500">
+          <label for="remember" class="text-sm text-gray-600">Remember me for 30 days</label>
+        </div>
+
+        <div *ngIf="errorMessage" class="flex items-center gap-2 bg-red-50 text-red-600 text-sm px-4 py-3 rounded-xl">
+          <i class="fas fa-exclamation-circle"></i>
+          {{ errorMessage }}
+        </div>
+
+        <button type="submit" class="w-full btn-primary rounded-xl py-3 text-base">
+          <i class="fas fa-sign-in-alt text-sm"></i> Sign In
+        </button>
       </form>
 
-      <div *ngIf="errorMessage" class="text-red-500 mt-4">
-        {{ errorMessage }}
+      <!-- Divider -->
+      <div class="flex items-center gap-3 my-6">
+        <hr class="flex-1 border-gray-200">
+        <span class="text-gray-400 text-sm">or continue with</span>
+        <hr class="flex-1 border-gray-200">
       </div>
 
-      <!-- Links for Forgot Password and Sign Up -->
-      <div class="flex justify-between mt-4">
-        <a href="#" class="text-red-500 hover:text-red-600">Forgot Password?</a>
-        <a routerLink="/sign-up" class="text-gray-600 hover:text-red-500">Don't have an account? Sign Up</a>
+      <!-- Social Login -->
+      <div class="grid grid-cols-2 gap-3">
+        <button class="flex items-center justify-center gap-2 border-2 border-gray-200 rounded-xl py-2.5 hover:bg-gray-50 transition-colors text-sm font-medium text-gray-700">
+          <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" class="w-5 h-5">
+          Google
+        </button>
+        <button class="flex items-center justify-center gap-2 border-2 border-gray-200 rounded-xl py-2.5 hover:bg-gray-50 transition-colors text-sm font-medium text-gray-700">
+          <i class="fab fa-facebook text-blue-600 text-lg"></i>
+          Facebook
+        </button>
       </div>
+
+      <p class="text-center text-sm text-gray-600 mt-6">
+        Don't have an account?
+        <a routerLink="/sign-up" class="text-red-500 hover:text-red-600 font-semibold ml-1">Create Account</a>
+      </p>
     </div>
   </div>
 </div>

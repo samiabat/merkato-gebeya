@@ -1,163 +1,82 @@
-<div class="container mx-auto p-4 flex flex-col md:flex-row">
-    <!-- Sidebar Filter (Product Filter) -->
-    <aside class="w-full md:w-1/4 bg-gray-100 p-4 mb-4 md:mb-0">
-        <h2 class="font-semibold text-lg mb-4">Filter by Category</h2>
-        <ul class="space-y-2">
-            <!-- Category Level 1 -->
-            <li class="font-semibold">
-                <label class="inline-flex items-center">
-                    <input type="checkbox" class="form-checkbox">
-                    <span class="ml-2">Women's Fashion</span>
-                </label>
-                <ul class="pl-4 space-y-1">
-                    <!-- Subcategory Level 2 -->
-                    <li>
-                        <label class="inline-flex items-center">
-                            <input type="checkbox" class="form-checkbox">
-                            <span class="ml-2">Clothing</span>
-                        </label>
-                    </li>
-                    <li>
-                        <label class="inline-flex items-center">
-                            <input type="checkbox" class="form-checkbox">
-                            <span class="ml-2">Shoes</span>
-                        </label>
-                    </li>
-                    <li>
-                        <label class="inline-flex items-center">
-                            <input type="checkbox" class="form-checkbox">
-                            <span class="ml-2">Accessories</span>
-                        </label>
-                    </li>
-                </ul>
-            </li>
-            <li class="font-semibold">
-                <label class="inline-flex items-center">
-                    <input type="checkbox" class="form-checkbox">
-                    <span class="ml-2">Men's Fashion</span>
-                </label>
-                <ul class="pl-4 space-y-1">
-                    <li>
-                        <label class="inline-flex items-center">
-                            <input type="checkbox" class="form-checkbox">
-                            <span class="ml-2">Clothing</span>
-                        </label>
-                    </li>
-                    <li>
-                        <label class="inline-flex items-center">
-                            <input type="checkbox" class="form-checkbox">
-                            <span class="ml-2">Shoes</span>
-                        </label>
-                    </li>
-                    <li>
-                        <label class="inline-flex items-center">
-                            <input type="checkbox" class="form-checkbox">
-                            <span class="ml-2">Accessories</span>
-                        </label>
-                    </li>
-                </ul>
-            </li>
-            <li class="font-semibold">
-                <label class="inline-flex items-center">
-                    <input type="checkbox" class="form-checkbox">
-                    <span class="ml-2">Electronics</span>
-                </label>
-                <ul class="pl-4 space-y-1">
-                    <li>
-                        <label class="inline-flex items-center">
-                            <input type="checkbox" class="form-checkbox">
-                            <span class="ml-2">PC</span>
-                        </label>
-                    </li>
-                    <li>
-                        <label class="inline-flex items-center">
-                            <input type="checkbox" class="form-checkbox">
-                            <span class="ml-2">Laptops</span>
-                        </label>
-                    </li>
-                    <li>
-                        <label class="inline-flex items-center">
-                            <input type="checkbox" class="form-checkbox">
-                            <span class="ml-2">Phones</span>
-                        </label>
-                    </li>
-                    <li>
-                        <label class="inline-flex items-center">
-                            <input type="checkbox" class="form-checkbox">
-                            <span class="ml-2">Headphones</span>
-                        </label>
-                    </li>
-                </ul>
-            </li>
-            <li class="font-semibold">
-                <label class="inline-flex items-center">
-                    <input type="checkbox" class="form-checkbox">
-                    <span class="ml-2">Home & Lifestyle</span>
-                </label>
-                <ul class="pl-4 space-y-1">
-                    <li>
-                        <label class="inline-flex items-center">
-                            <input type="checkbox" class="form-checkbox">
-                            <span class="ml-2">Furniture</span>
-                        </label>
-                    </li>
-                    <li>
-                        <label class="inline-flex items-center">
-                            <input type="checkbox" class="form-checkbox">
-                            <span class="ml-2">Kitchen</span>
-                        </label>
-                    </li>
-                </ul>
-            </li>
-            <li class="font-semibold">
-                <label class="inline-flex items-center">
-                    <input type="checkbox" class="form-checkbox">
-                    <span class="ml-2">Sports & Outdoor</span>
-                </label>
-                <ul class="pl-4 space-y-1">
-                    <li>
-                        <label class="inline-flex items-center">
-                            <input type="checkbox" class="form-checkbox">
-                            <span class="ml-2">Fitness</span>
-                        </label>
-                    </li>
-                    <li>
-                        <label class="inline-flex items-center">
-                            <input type="checkbox" class="form-checkbox">
-                            <span class="ml-2">Outdoor Gear</span>
-                        </label>
-                    </li>
-                </ul>
-            </li>
-        </ul>
+<div class="container mx-auto px-4 lg:px-6 py-6">
+  <div class="flex flex-col lg:flex-row gap-6">
 
-        <!-- Price Filter -->
-        <h2 class="font-semibold text-lg mt-6 mb-4">Filter by Price</h2>
-        <div class="flex flex-col space-y-2">
-            <label for="price-range" class="text-sm">Price Range</label>
-            <input id="price-range" type="range" min="0" max="1000" step="10" class="w-full">
-            <div class="flex justify-between text-sm">
-                <span>$0</span>
-                <span>$1000</span>
-            </div>
-        </div>
+    <!-- Sidebar Filter -->
+    <aside class="hidden lg:block w-64 flex-shrink-0">
+      <div class="bg-white rounded-xl border border-gray-100 shadow-sm p-5">
+        <h2 class="font-semibold text-sm text-gray-900 mb-4 uppercase tracking-wide">Browse Categories</h2>
+        <ul class="space-y-1">
+          <li *ngFor="let cat of sidebarCategories">
+            <a href="#" class="flex items-center justify-between py-2 px-3 rounded-lg text-sm text-gray-700 hover:bg-red-50 hover:text-red-500 transition-colors group">
+              <span class="flex items-center gap-2.5">
+                <i [class]="cat.icon + ' w-4 text-center text-gray-400 group-hover:text-red-400'"></i>
+                {{ cat.name }}
+              </span>
+              <i class="fas fa-chevron-right text-xs text-gray-300 group-hover:text-red-400"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
     </aside>
 
-    <!-- Hero Section -->
-    <section class="w-full md:w-3/4 ml-0 md:ml-4">
-        <div class="relative bg-black text-white rounded-lg overflow-hidden">
-            <img src="https://b2232832.smushcdn.com/2232832/wp-content/uploads/2023/01/BYD-Seagull-Front-Angle.jpg?lossy=1&strip=0&webp=1" alt="Hero Image" class="w-full h-auto">
-            <div class="absolute inset-0 bg-black bg-opacity-50 p-8 flex flex-col justify-center">
-                <h2 class="text-2xl md:text-4xl font-bold mb-4">Up to 10% off Voucher</h2>
-                <a href="#" class="bg-green-500 text-white px-6 py-3 rounded-lg">Shop Now</a>
+    <!-- Hero Carousel -->
+    <section class="flex-1 min-w-0">
+      <div class="relative rounded-2xl overflow-hidden bg-gray-900 h-64 sm:h-80 md:h-96 lg:h-[420px]">
+        <!-- Slide -->
+        <div *ngFor="let slide of slides; let i = index"
+          [class.opacity-100]="currentSlide === i"
+          [class.opacity-0]="currentSlide !== i"
+          class="absolute inset-0 transition-opacity duration-700">
+          <img [src]="slide.image" [alt]="slide.title" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-r from-gray-900/80 via-gray-900/40 to-transparent"></div>
+          <div class="absolute inset-0 flex flex-col justify-center px-8 md:px-14 lg:px-16">
+            <span class="text-red-400 text-sm font-semibold uppercase tracking-widest mb-2">{{ slide.badge }}</span>
+            <h1 class="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-3 max-w-lg">
+              {{ slide.title }}
+            </h1>
+            <p class="text-gray-300 text-sm md:text-base mb-6 max-w-md hidden sm:block">{{ slide.subtitle }}</p>
+            <div class="flex items-center gap-3">
+              <a href="#" class="bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-full font-semibold text-sm transition-colors flex items-center gap-2">
+                Shop Now <i class="fas fa-arrow-right text-xs"></i>
+              </a>
+              <a href="#" class="bg-white/20 hover:bg-white/30 text-white px-6 py-3 rounded-full font-semibold text-sm transition-colors backdrop-blur-sm">
+                View All
+              </a>
             </div>
-            <!-- Slider Dots -->
-            <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-                <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
-                <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
-                <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
-                <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
-            </div>
+          </div>
         </div>
+
+        <!-- Prev/Next Arrows -->
+        <button (click)="prevSlide()" class="absolute left-4 top-1/2 -translate-y-1/2 w-9 h-9 bg-white/20 hover:bg-white/40 backdrop-blur-sm rounded-full flex items-center justify-center transition-colors text-white">
+          <i class="fas fa-chevron-left text-sm"></i>
+        </button>
+        <button (click)="nextSlide()" class="absolute right-4 top-1/2 -translate-y-1/2 w-9 h-9 bg-white/20 hover:bg-white/40 backdrop-blur-sm rounded-full flex items-center justify-center transition-colors text-white">
+          <i class="fas fa-chevron-right text-sm"></i>
+        </button>
+
+        <!-- Slide Indicators -->
+        <div class="absolute bottom-5 left-1/2 -translate-x-1/2 flex items-center gap-2">
+          <button *ngFor="let slide of slides; let i = index"
+            (click)="goToSlide(i)"
+            [class]="currentSlide === i ? 'w-6 h-2 bg-red-500' : 'w-2 h-2 bg-white/50 hover:bg-white/80'"
+            class="rounded-full transition-all duration-300">
+          </button>
+        </div>
+      </div>
+
+      <!-- Feature Badges -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-4">
+        <div *ngFor="let feat of features" class="flex items-center gap-3 bg-white rounded-xl border border-gray-100 shadow-sm px-4 py-3 hover:shadow-md transition-shadow">
+          <div class="w-9 h-9 rounded-full bg-red-50 flex items-center justify-center flex-shrink-0">
+            <i [class]="feat.icon + ' text-red-500 text-sm'"></i>
+          </div>
+          <div>
+            <p class="text-xs font-semibold text-gray-800">{{ feat.title }}</p>
+            <p class="text-xs text-gray-500">{{ feat.desc }}</p>
+          </div>
+        </div>
+      </div>
     </section>
+  </div>
 </div>
+

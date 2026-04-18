@@ -1,52 +1,138 @@
-<!-- Updated HTML for Sign Up -->
-<div class="container mx-auto py-12 px-4">
-  <div class="flex flex-col md:flex-row items-center justify-between">
-    <!-- Left Side: Image -->
-    <div class="md:w-1/2 mb-8 md:mb-0">
-      <img src="../../../assets/images/Side Image.png" alt="Shopping Cart" class="w-full h-auto">
+<div class="min-h-screen bg-gray-50 flex">
+
+  <!-- Left: Image Panel -->
+  <div class="hidden lg:flex lg:w-1/2 relative bg-gray-900 overflow-hidden">
+    <img src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=900&q=80" alt="Fashion Shopping" class="w-full h-full object-cover opacity-50">
+    <div class="absolute inset-0 bg-gradient-to-br from-red-900/60 to-gray-900/80 flex flex-col justify-center px-16">
+      <a routerLink="/home" class="absolute top-8 left-8">
+        <img src="../../../assets/images/logo.png" alt="Merkato Gebeya" class="h-12 brightness-0 invert">
+      </a>
+      <h2 class="text-4xl font-bold text-white mb-4 leading-tight">
+        Start Your<br>Shopping Journey
+      </h2>
+      <p class="text-gray-300 text-lg mb-8">Join millions of Ethiopians who shop smarter with Merkato Gebeya.</p>
+      <div class="space-y-3">
+        <div class="flex items-center gap-3 text-gray-300">
+          <div class="w-7 h-7 rounded-full bg-red-500 flex items-center justify-center flex-shrink-0">
+            <i class="fas fa-check text-white text-xs"></i>
+          </div>
+          <span>Access to 1M+ products from local and global brands</span>
+        </div>
+        <div class="flex items-center gap-3 text-gray-300">
+          <div class="w-7 h-7 rounded-full bg-red-500 flex items-center justify-center flex-shrink-0">
+            <i class="fas fa-check text-white text-xs"></i>
+          </div>
+          <span>Exclusive deals and personalized recommendations</span>
+        </div>
+        <div class="flex items-center gap-3 text-gray-300">
+          <div class="w-7 h-7 rounded-full bg-red-500 flex items-center justify-center flex-shrink-0">
+            <i class="fas fa-check text-white text-xs"></i>
+          </div>
+          <span>Fast & secure delivery across Ethiopia</span>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <!-- Right Side: Form -->
-    <div class="md:w-1/2 max-w-md">
-      <h2 class="text-3xl font-bold text-gray-900 mb-4">Sign up for Ephara</h2>
-      <p class="text-gray-600 mb-8">Create your account by filling out the form below</p>
+  <!-- Right: Form Panel -->
+  <div class="flex-1 flex items-center justify-center px-6 py-12">
+    <div class="w-full max-w-md">
+      <!-- Mobile Logo -->
+      <a routerLink="/home" class="flex items-center gap-2 mb-8 lg:hidden">
+        <img src="../../../assets/images/logo.png" alt="Merkato Gebeya" class="h-10">
+      </a>
 
-      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-        <!-- Name Input -->
-        <div class="mb-4">
-          <input type="text" formControlName="full_name" placeholder="Full Name" class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+      <div class="mb-8">
+        <h1 class="text-3xl font-bold text-gray-900 mb-2">Create Account</h1>
+        <p class="text-gray-500">Sign up for free and start shopping today.</p>
+      </div>
+
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="space-y-4">
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1.5">Full Name</label>
+          <div class="relative">
+            <i class="fas fa-user absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
+            <input type="text" formControlName="full_name" placeholder="e.g. Abebe Girma"
+              class="w-full pl-11 pr-4 py-3 border-2 border-gray-200 rounded-xl text-sm focus:outline-none focus:border-red-400 transition-colors">
+          </div>
         </div>
 
-        <!-- Email Input -->
-        <div class="mb-4">
-          <input type="email" formControlName="email" placeholder="Email" class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1.5">Email Address</label>
+          <div class="relative">
+            <i class="fas fa-envelope absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
+            <input type="email" formControlName="email" placeholder="abebe@example.com"
+              class="w-full pl-11 pr-4 py-3 border-2 border-gray-200 rounded-xl text-sm focus:outline-none focus:border-red-400 transition-colors">
+          </div>
         </div>
 
-        <!-- Phone Input -->
-        <div class="mb-4">
-          <input type="tel" formControlName="phone_number" placeholder="Phone Number" class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1.5">Phone Number</label>
+          <div class="relative">
+            <i class="fas fa-phone absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
+            <input type="tel" formControlName="phone_number" placeholder="+251 9XX XXX XXX"
+              class="w-full pl-11 pr-4 py-3 border-2 border-gray-200 rounded-xl text-sm focus:outline-none focus:border-red-400 transition-colors">
+          </div>
         </div>
 
-        <!-- Password Input -->
-        <div class="mb-4">
-          <input type="password" formControlName="password" placeholder="Password" class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1.5">Password</label>
+          <div class="relative">
+            <i class="fas fa-lock absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
+            <input [type]="showPassword ? 'text' : 'password'" formControlName="password" placeholder="Create a strong password"
+              class="w-full pl-11 pr-12 py-3 border-2 border-gray-200 rounded-xl text-sm focus:outline-none focus:border-red-400 transition-colors">
+            <button type="button" (click)="showPassword = !showPassword" class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600">
+              <i [class]="showPassword ? 'fas fa-eye-slash text-sm' : 'fas fa-eye text-sm'"></i>
+            </button>
+          </div>
+          <p class="text-xs text-gray-500 mt-1.5">Use at least 8 characters with letters and numbers.</p>
         </div>
 
-        <!-- Sign Up Button -->
-        <button type="submit" class="bg-red-500 text-white w-full py-3 rounded-lg hover:bg-red-600">Sign Up</button>
+        <div class="flex items-start gap-2">
+          <input type="checkbox" id="agree" class="w-4 h-4 mt-0.5 accent-red-500">
+          <label for="agree" class="text-sm text-gray-600">
+            I agree to the
+            <a routerLink="/terms-of-service" class="text-red-500 hover:underline">Terms of Service</a>
+            and
+            <a routerLink="/privacy-policy" class="text-red-500 hover:underline">Privacy Policy</a>
+          </label>
+        </div>
+
+        <div *ngIf="errorMessage" class="flex items-center gap-2 bg-red-50 text-red-600 text-sm px-4 py-3 rounded-xl">
+          <i class="fas fa-exclamation-circle"></i> {{ errorMessage }}
+        </div>
+        <div *ngIf="successMessage" class="flex items-center gap-2 bg-green-50 text-green-600 text-sm px-4 py-3 rounded-xl">
+          <i class="fas fa-check-circle"></i> {{ successMessage }}
+        </div>
+
+        <button type="submit" class="w-full btn-primary rounded-xl py-3 text-base">
+          <i class="fas fa-user-plus text-sm"></i> Create Account
+        </button>
       </form>
 
-      <div *ngIf="errorMessage" class="text-red-500 mt-4">
-        {{ errorMessage }}
-      </div>
-      <div *ngIf="successMessage" class="text-green-500 mt-4">
-        {{ successMessage }}
+      <!-- Divider -->
+      <div class="flex items-center gap-3 my-5">
+        <hr class="flex-1 border-gray-200">
+        <span class="text-gray-400 text-sm">or sign up with</span>
+        <hr class="flex-1 border-gray-200">
       </div>
 
-      <!-- Link to Log In -->
-      <div class="mt-4 text-center">
-        <a routerLink="/sign-in" class="text-gray-600 hover:text-red-500">Already have an account? Log In</a>
+      <!-- Social Signup -->
+      <div class="grid grid-cols-2 gap-3">
+        <button class="flex items-center justify-center gap-2 border-2 border-gray-200 rounded-xl py-2.5 hover:bg-gray-50 transition-colors text-sm font-medium text-gray-700">
+          <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" class="w-5 h-5">
+          Google
+        </button>
+        <button class="flex items-center justify-center gap-2 border-2 border-gray-200 rounded-xl py-2.5 hover:bg-gray-50 transition-colors text-sm font-medium text-gray-700">
+          <i class="fab fa-facebook text-blue-600 text-lg"></i>
+          Facebook
+        </button>
       </div>
+
+      <p class="text-center text-sm text-gray-600 mt-6">
+        Already have an account?
+        <a routerLink="/sign-in" class="text-red-500 hover:text-red-600 font-semibold ml-1">Sign In</a>
+      </p>
     </div>
   </div>
 </div>

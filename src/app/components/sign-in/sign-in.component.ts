@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-sign-in',
@@ -12,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 export class SignInComponent {
   loginForm: FormGroup;
   errorMessage: string = '';
+  showPassword = false;
 
   constructor(
     private fb: FormBuilder,
@@ -35,15 +35,15 @@ export class SignInComponent {
           const accessToken = response.access_token;
           if (accessToken) {
             localStorage.setItem('access_token', accessToken);
-            this.router.navigate(['/dashboard']);
+            this.router.navigate(['/home']);
           }
         },
         (error) => {
-          this.errorMessage = `${error} Invalid credentials. Please try again.`;
+          this.errorMessage = 'Invalid credentials. Please check your email/phone and password.';
         }
       );
     } else {
-      this.errorMessage = 'Please fill in all fields.';
+      this.errorMessage = 'Please fill in all required fields.';
     }
   }
 }

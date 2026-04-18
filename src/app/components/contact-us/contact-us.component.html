@@ -1,55 +1,135 @@
-<div class="container mx-auto py-8">
-    <!-- Breadcrumb -->
-    <nav class="mb-8 text-gray-700">
-      <a href="#" class="hover:text-red-500">Home</a> / 
-      <span class="text-gray-900">Contact</span>
-    </nav>
-  
-    <div class="flex flex-wrap md:flex-nowrap gap-8">
-      <!-- Contact Information -->
-      <div class="bg-white shadow-md rounded-lg p-8 md:w-1/3">
-        <!-- Call to Us -->
-        <div class="mb-8">
-          <div class="flex items-center mb-4">
-            <i class="fas fa-phone-alt text-red-500 text-3xl mr-4"></i>
-            <h3 class="text-xl font-bold">Call To Us</h3>
-          </div>
-          <p class="text-gray-700">We are available 24/7, 7 days a week.</p>
-          <p class="text-gray-700 font-semibold mt-2">Phone: +2519857854565</p>
-          <hr class="my-4 border-gray-200">
-        </div>
-  
-        <!-- Write to Us -->
-        <div>
-          <div class="flex items-center mb-4">
-            <i class="fas fa-envelope text-red-500 text-3xl mr-4"></i>
-            <h3 class="text-xl font-bold">Write To Us</h3>
-          </div>
-          <p class="text-gray-700">Fill out our form and we will contact you within 24 hours.</p>
-          <p class="text-gray-700 mt-2">Emails:</p>
-          <p class="text-gray-700">customer@merkato-gebeya.com</p>
-          <p class="text-gray-700">support@merkato-gebeya.com</p>
-        </div>
-      </div>
-  
-      <!-- Contact Form -->
-      <div class="bg-white shadow-md rounded-lg p-8 md:w-2/3">
-        <form (submit)="onSubmit()" novalidate>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-            <input type="text" placeholder="Your Name *" class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500" required>
-            <input type="email" placeholder="Your Email *" class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500" required>
-            <input type="tel" placeholder="Your Phone *" class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500" required>
-          </div>
-  
-          <div class="mb-4">
-            <textarea placeholder="Your Message" class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 h-32"></textarea>
-          </div>
-  
-          <button type="submit" class="bg-red-500 text-white px-6 py-3 rounded-lg hover:bg-red-600 focus:ring-4 focus:ring-red-400">
-            Send Message
-          </button>
-        </form>
-      </div>
+<div class="bg-white">
+  <!-- Breadcrumb -->
+  <div class="bg-gray-50 border-b border-gray-100">
+    <div class="container mx-auto px-4 lg:px-6 py-3">
+      <nav class="text-sm text-gray-500 flex items-center gap-2">
+        <a routerLink="/" class="hover:text-red-500 transition-colors">Home</a>
+        <i class="fas fa-chevron-right text-xs text-gray-400"></i>
+        <span class="text-gray-900 font-medium">Contact Us</span>
+      </nav>
     </div>
   </div>
-  
+
+  <div class="container mx-auto px-4 lg:px-6 py-14">
+
+    <!-- Page Title -->
+    <div class="text-center mb-12">
+      <h1 class="text-4xl font-bold text-gray-900 mb-3">Get In Touch</h1>
+      <p class="text-gray-600 max-w-lg mx-auto">Have a question, feedback or need support? We'd love to hear from you. Fill in the form below and our team will get back to you within 24 hours.</p>
+    </div>
+
+    <div class="flex flex-wrap xl:flex-nowrap gap-8">
+
+      <!-- Contact Info -->
+      <div class="w-full xl:w-1/3 space-y-5">
+        <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center flex-shrink-0">
+              <i class="fas fa-phone-alt text-red-500 text-lg"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-gray-900 mb-1">Call Us</h3>
+              <p class="text-gray-500 text-sm mb-2">Available 24/7, 7 days a week</p>
+              <a href="tel:+251985785456" class="text-gray-800 font-medium hover:text-red-500 transition-colors">+251 985 785 456</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center flex-shrink-0">
+              <i class="fas fa-envelope text-red-500 text-lg"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-gray-900 mb-1">Email Us</h3>
+              <p class="text-gray-500 text-sm mb-2">We'll respond within 24 hours</p>
+              <a href="mailto:customer@merkato-gebeya.com" class="text-gray-800 font-medium hover:text-red-500 transition-colors block text-sm">customer&#64;merkato-gebeya.com</a>
+              <a href="mailto:support@merkato-gebeya.com" class="text-gray-800 font-medium hover:text-red-500 transition-colors block text-sm">support&#64;merkato-gebeya.com</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center flex-shrink-0">
+              <i class="fas fa-map-marker-alt text-red-500 text-lg"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-gray-900 mb-1">Visit Us</h3>
+              <p class="text-gray-500 text-sm mb-1">Mon–Fri, 8am – 6pm</p>
+              <p class="text-gray-800 font-medium text-sm">111 Bole Road, Kirkos Sub-City<br>Addis Ababa, Ethiopia</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social Links -->
+        <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
+          <h3 class="font-bold text-gray-900 mb-4">Follow Us</h3>
+          <div class="flex gap-3">
+            <a href="#" class="w-10 h-10 bg-gray-100 hover:bg-red-500 hover:text-white rounded-full flex items-center justify-center transition-colors text-gray-600">
+              <i class="fab fa-facebook-f text-sm"></i>
+            </a>
+            <a href="#" class="w-10 h-10 bg-gray-100 hover:bg-red-500 hover:text-white rounded-full flex items-center justify-center transition-colors text-gray-600">
+              <i class="fab fa-twitter text-sm"></i>
+            </a>
+            <a href="#" class="w-10 h-10 bg-gray-100 hover:bg-red-500 hover:text-white rounded-full flex items-center justify-center transition-colors text-gray-600">
+              <i class="fab fa-instagram text-sm"></i>
+            </a>
+            <a href="#" class="w-10 h-10 bg-gray-100 hover:bg-red-500 hover:text-white rounded-full flex items-center justify-center transition-colors text-gray-600">
+              <i class="fab fa-telegram-plane text-sm"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="flex-1 bg-white rounded-2xl border border-gray-100 shadow-sm p-8">
+        <h2 class="text-xl font-bold text-gray-900 mb-6">Send a Message</h2>
+        <form (submit)="onSubmit($event)" novalidate class="space-y-5">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1.5">Your Name <span class="text-red-500">*</span></label>
+              <input type="text" placeholder="e.g. Abebe Girma" required
+                class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl text-sm focus:outline-none focus:border-red-400 transition-colors">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1.5">Email Address <span class="text-red-500">*</span></label>
+              <input type="email" placeholder="abebe@example.com" required
+                class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl text-sm focus:outline-none focus:border-red-400 transition-colors">
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1.5">Phone Number</label>
+            <input type="tel" placeholder="+251 9XX XXX XXX"
+              class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl text-sm focus:outline-none focus:border-red-400 transition-colors">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1.5">Subject</label>
+            <select class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl text-sm focus:outline-none focus:border-red-400 transition-colors bg-white">
+              <option value="">Select a topic</option>
+              <option>Order Inquiry</option>
+              <option>Return & Refund</option>
+              <option>Seller Registration</option>
+              <option>Technical Support</option>
+              <option>General Inquiry</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1.5">Message <span class="text-red-500">*</span></label>
+            <textarea required rows="5" placeholder="Tell us how we can help you..."
+              class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl text-sm focus:outline-none focus:border-red-400 transition-colors resize-none"></textarea>
+          </div>
+          <div class="flex items-center gap-3">
+            <button type="submit" class="btn-primary rounded-xl px-8">
+              <i class="fas fa-paper-plane text-sm"></i> Send Message
+            </button>
+            <span *ngIf="submitted" class="text-green-600 text-sm flex items-center gap-1.5">
+              <i class="fas fa-check-circle"></i> Message sent successfully!
+            </span>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>

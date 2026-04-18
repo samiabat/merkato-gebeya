@@ -9,6 +9,7 @@ interface Subcategory {
 interface Category {
   id: number;
   name: string;
+  icon: string;
   subcategoriesOpen?: boolean;
   subcategories: Subcategory[];
 }
@@ -24,50 +25,96 @@ export class SecondNavComponent {
     {
       id: 1,
       name: "Women's Fashion",
+      icon: 'fas fa-female',
       subcategoriesOpen: false,
       subcategories: [
-        {
-          id: 101,
-          name: 'Skirts',
-          subcategories: [
-            { id: 1011, name: 'Short Skirts' },
-            { id: 1012, name: 'Long Skirts' }
-          ]
-        },
-        {
-          id: 102,
-          name: 'Dresses',
-          subcategories: [
-            { id: 1021, name: 'Casual Dresses' },
-            { id: 1022, name: 'Formal Dresses' }
-          ]
-        }
+        { id: 101, name: 'Dresses' },
+        { id: 102, name: 'Tops & Blouses' },
+        { id: 103, name: 'Shoes' },
+        { id: 104, name: 'Bags & Accessories' },
       ]
     },
     {
       id: 2,
       name: "Men's Fashion",
+      icon: 'fas fa-male',
       subcategoriesOpen: false,
       subcategories: [
-        {
-          id: 201,
-          name: 'T-Shirts',
-          subcategories: [
-            { id: 2011, name: 'Casual T-Shirts' },
-            { id: 2012, name: 'Formal T-Shirts' }
-          ]
-        },
-        {
-          id: 202,
-          name: 'Jackets',
-          subcategories: [
-            { id: 2021, name: 'Casual Jackets' },
-            { id: 2022, name: 'Formal Jackets' }
-          ]
-        }
+        { id: 201, name: 'T-Shirts & Shirts' },
+        { id: 202, name: 'Trousers & Jeans' },
+        { id: 203, name: 'Shoes' },
+        { id: 204, name: 'Jackets & Coats' },
       ]
     },
-    // Add more categories as needed
+    {
+      id: 3,
+      name: 'Electronics',
+      icon: 'fas fa-laptop',
+      subcategoriesOpen: false,
+      subcategories: [
+        { id: 301, name: 'Phones & Tablets' },
+        { id: 302, name: 'Laptops & Computers' },
+        { id: 303, name: 'Cameras & Photography' },
+        { id: 304, name: 'Audio & Headphones' },
+      ]
+    },
+    {
+      id: 4,
+      name: 'Home & Lifestyle',
+      icon: 'fas fa-couch',
+      subcategoriesOpen: false,
+      subcategories: [
+        { id: 401, name: 'Furniture' },
+        { id: 402, name: 'Kitchen & Dining' },
+        { id: 403, name: 'Bedding & Bath' },
+        { id: 404, name: 'Home Decor' },
+      ]
+    },
+    {
+      id: 5,
+      name: 'Sports & Outdoor',
+      icon: 'fas fa-running',
+      subcategoriesOpen: false,
+      subcategories: [
+        { id: 501, name: 'Fitness Equipment' },
+        { id: 502, name: 'Outdoor Gear' },
+        { id: 503, name: 'Sports Clothing' },
+      ]
+    },
+    {
+      id: 6,
+      name: "Baby's & Toys",
+      icon: 'fas fa-baby',
+      subcategoriesOpen: false,
+      subcategories: [
+        { id: 601, name: 'Baby Clothing' },
+        { id: 602, name: 'Toys & Games' },
+        { id: 603, name: 'Baby Gear' },
+      ]
+    },
+    {
+      id: 7,
+      name: 'Groceries & Pets',
+      icon: 'fas fa-shopping-basket',
+      subcategoriesOpen: false,
+      subcategories: [
+        { id: 701, name: 'Fresh Produce' },
+        { id: 702, name: 'Pet Food & Supplies' },
+        { id: 703, name: 'Snacks & Beverages' },
+      ]
+    },
+    {
+      id: 8,
+      name: 'Health & Beauty',
+      icon: 'fas fa-heartbeat',
+      subcategoriesOpen: false,
+      subcategories: [
+        { id: 801, name: 'Skin Care' },
+        { id: 802, name: 'Hair Care' },
+        { id: 803, name: 'Vitamins & Supplements' },
+        { id: 804, name: 'Personal Care' },
+      ]
+    },
   ];
 
   toggleCategories() {
@@ -75,11 +122,10 @@ export class SecondNavComponent {
   }
 
   toggleSubcategories(categoryId: number) {
-    this.categories = this.categories.map(category => {
-      if (category.id === categoryId) {
-        category.subcategoriesOpen = !category.subcategoriesOpen;
-      }
-      return category;
-    });
+    this.categories = this.categories.map(category => ({
+      ...category,
+      subcategoriesOpen: category.id === categoryId ? !category.subcategoriesOpen : false
+    }));
   }
 }
+

@@ -14,6 +14,7 @@ export class SignUpComponent {
   registerForm: FormGroup;
   errorMessage: string = '';
   successMessage: string = '';
+  showPassword = false;
 
   constructor(
     private fb: FormBuilder,
@@ -24,7 +25,7 @@ export class SignUpComponent {
       full_name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       phone_number: ['', Validators.required],
-      password: ['', [Validators.required, Validators.minLength(6)]]
+      password: ['', [Validators.required, Validators.minLength(8)]]
     });
   }
 
@@ -38,14 +39,14 @@ export class SignUpComponent {
         password
       }).subscribe(
         (response) => {
-          this.successMessage = 'User registered successfully';
+          this.successMessage = 'Account created successfully! Redirecting to sign in...';
           this.errorMessage = '';
           setTimeout(() => {
             this.router.navigate(['/sign-in']);
           }, 2000);
         },
         (error) => {
-          if (error.error.detail) {
+          if (error.error && error.error.detail) {
             this.errorMessage = error.error.detail;
           } else {
             this.errorMessage = 'Registration failed. Please try again.';
@@ -54,7 +55,7 @@ export class SignUpComponent {
         }
       );
     } else {
-      this.errorMessage = 'Please fill in all fields correctly.';
+      this.errorMessage = 'Please fill in all required fields correctly.';
       this.successMessage = '';
     }
   }

@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent {
+  currentYear = new Date().getFullYear();
 
+  onSubscribe(event: Event) {
+    event.preventDefault();
+    // Newsletter subscription logic
+  }
 }

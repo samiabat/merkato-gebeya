@@ -1,48 +1,51 @@
-<!-- Secondary Navigation (Categories) -->
-<div class="bg-gray-100 py-2">
-    <div class="container mx-auto">
-      <!-- For larger screens: Horizontal navigation -->
-      <div class="hidden md:flex items-center space-x-4">
-        <a href="#" class="text-gray-700 hover:text-red-500">Women's Fashion</a>
-        <a href="#" class="text-gray-700 hover:text-red-500">Men's Fashion</a>
-        <a href="#" class="text-gray-700 hover:text-red-500">Electronics</a>
-        <a href="#" class="text-gray-700 hover:text-red-500">Home & Lifestyle</a>
-        <a href="#" class="text-gray-700 hover:text-red-500">Sports & Outdoor</a>
-        <a href="#" class="text-gray-700 hover:text-red-500">Baby's & Toys</a>
-        <a href="#" class="text-gray-700 hover:text-red-500">Groceries & Pets</a>
-        <a href="#" class="text-gray-700 hover:text-red-500">Health & Beauty</a>
-      </div>
-  
-      <!-- For small screens: Dropdown or scrollable categories -->
-      <div class="md:hidden">
-        <button (click)="toggleCategories()" class="bg-white border border-gray-300 text-gray-700 py-2 px-4 w-full text-left">
-          Categories
-          <i [class]="categoriesOpen ? 'fas fa-chevron-up' : 'fas fa-chevron-down'" class="float-right"></i>
-        </button>
-  
-        <!-- Accordion for Categories -->
-        <div *ngIf="categoriesOpen" class="bg-white border-t border-gray-300">
-          <div *ngFor="let category of categories" class="py-2 px-4">
-            <button (click)="toggleSubcategories(category.id)" class="text-gray-700 hover:text-red-500 w-full text-left">
+<!-- Category Navigation Bar -->
+<nav class="bg-white border-b border-gray-100 shadow-sm">
+  <div class="container mx-auto px-4 lg:px-6">
+
+    <!-- Desktop: Horizontal Categories -->
+    <div class="hidden md:flex items-center space-x-1 overflow-x-auto scrollbar-hide py-1">
+      <a *ngFor="let cat of categories" href="#"
+        class="flex items-center gap-1.5 whitespace-nowrap px-3 py-2.5 text-sm font-medium text-gray-600 hover:text-red-500 hover:bg-red-50 rounded-lg transition-all duration-150">
+        <i [class]="cat.icon + ' text-xs'"></i>
+        {{ cat.name }}
+      </a>
+    </div>
+
+    <!-- Mobile: Dropdown -->
+    <div class="md:hidden">
+      <button
+        (click)="toggleCategories()"
+        class="flex items-center justify-between w-full py-3 text-sm font-medium text-gray-700">
+        <span class="flex items-center gap-2">
+          <i class="fas fa-th-large text-red-500"></i>
+          All Categories
+        </span>
+        <i [class]="categoriesOpen ? 'fas fa-chevron-up text-red-500' : 'fas fa-chevron-down text-gray-400'" class="text-xs"></i>
+      </button>
+
+      <div *ngIf="categoriesOpen" class="pb-2 divide-y divide-gray-50">
+        <div *ngFor="let category of categories" class="py-1">
+          <button (click)="toggleSubcategories(category.id)"
+            class="flex items-center justify-between w-full py-2 px-2 text-sm text-gray-700 hover:text-red-500 rounded-lg hover:bg-red-50 transition-colors">
+            <span class="flex items-center gap-2">
+              <i [class]="category.icon + ' w-4 text-center text-red-400'"></i>
               {{ category.name }}
-              <i [class]="category.subcategoriesOpen ? 'fas fa-chevron-up' : 'fas fa-chevron-down'" class="float-right"></i>
-            </button>
-  
-            <!-- Subcategories (visible only when clicked) -->
-            <div *ngIf="category.subcategoriesOpen" class="pl-4">
-              <div *ngFor="let subcategory of category.subcategories" class="py-1">
-                <a href="#" class="text-gray-600 hover:text-red-500">{{ subcategory.name }}</a>
-                <!-- Sub-subcategories -->
-                <div *ngIf="subcategory.subcategories" class="pl-4">
-                  <div *ngFor="let subsubcategory of subcategory.subcategories" class="py-1">
-                    <a href="#" class="text-gray-500 hover:text-red-500">{{ subsubcategory.name }}</a>
-                  </div>
-                </div>
-              </div>
+            </span>
+            <i *ngIf="category.subcategories?.length" [class]="category.subcategoriesOpen ? 'fas fa-chevron-up text-xs' : 'fas fa-chevron-down text-xs'" class="text-gray-400"></i>
+          </button>
+
+          <div *ngIf="category.subcategoriesOpen" class="pl-8 pb-1">
+            <div *ngFor="let subcategory of category.subcategories" class="py-1">
+              <a href="#" class="text-xs text-gray-600 hover:text-red-500 transition-colors block py-1">
+                {{ subcategory.name }}
+              </a>
             </div>
           </div>
         </div>
       </div>
     </div>
+
   </div>
+</nav>
+
   

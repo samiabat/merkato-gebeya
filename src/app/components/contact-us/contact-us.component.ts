@@ -6,10 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./contact-us.component.css']
 })
 export class ContactUsComponent {
+  submitted = false;
 
-  onSubmit() {
-    // Handle form submission logic here, like sending the data to an API.
-    console.log('Form submitted');
+  onSubmit(event: Event) {
+    event.preventDefault();
+    this.submitted = true;
+    setTimeout(() => this.submitted = false, 4000);
   }
-
 }
